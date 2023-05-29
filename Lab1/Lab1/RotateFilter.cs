@@ -10,7 +10,7 @@ namespace Lab1
     internal class RotateFilter : Filters
     {
         private int Xcenter, Ycenter;
-        private float angle = 30;
+        private float angle = 60;
         GraphicsUnit unit = new GraphicsUnit();
         public RotateFilter(Bitmap image)
         {
@@ -19,7 +19,19 @@ namespace Lab1
         }
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
-           if ((x-Xcenter - 1)*Math.Cos(angle) > sourceImage.GetBounds(ref unit).Left || (x - Xcenter - 1) * Math.Cos(angle) < sourceImage.Width || y - Ycenter > sourceImage.GetBounds(ref unit).Top || y - Ycenter < sourceImage.Height) return sourceImage.GetPixel((int)((x - Xcenter) * Math.Cos(angle)) - (int)((y - Ycenter) * Math.Sin(angle) + Xcenter), (int)((x - Xcenter) * Math.Sin(angle)) + (int)((y - Ycenter) * Math.Cos(angle) + Ycenter));
+            int distX = x - Xcenter;
+            int distY = y - Ycenter;
+            double cosAngle = Math.Cos(angle);
+            double sinAngle = Math.Sin(angle);
+
+            if ((distX * cosAngle) - (distY * sinAngle) + Xcenter > sourceImage.GetBounds(ref unit).Left &&
+                (distX * cosAngle) - (distY * sinAngle) + Xcenter < sourceImage.Width &&
+                (distX * sinAngle) + (distY * cosAngle) + Ycenter > sourceImage.GetBounds(ref unit).Top &&
+                (distX * sinAngle) + (distY * cosAngle) + Ycenter < sourceImage.Height)
+                return sourceImage.GetPixel(
+                    (int)(distX * cosAngle) - (int)(distY * sinAngle) + Xcenter,
+                    (int)(distX * sinAngle) + (int)(distY * cosAngle) + Ycenter
+                    );
             return Color.Empty;
         }
     }

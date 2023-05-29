@@ -159,5 +159,11 @@ namespace Lab1
             Filters filter = new MedianFilter(3);
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void diagonalInversionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new HalfDiagonalInversionFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

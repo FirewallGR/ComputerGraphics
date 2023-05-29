@@ -43,6 +43,7 @@ namespace Lab1
             this.movingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.waveFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,12 +54,12 @@ namespace Lab1
             this.borderHighlightingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.onYToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.cancel = new System.Windows.Forms.Button();
-            this.waveFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.diagonalInversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +111,8 @@ namespace Lab1
             this.grayWorldToolStripMenuItem,
             this.linearCorrectionToolStripMenuItem,
             this.movingFilterToolStripMenuItem,
-            this.waveFilterToolStripMenuItem});
+            this.waveFilterToolStripMenuItem,
+            this.diagonalInversionToolStripMenuItem});
             this.pointedToolStripMenuItem.Name = "pointedToolStripMenuItem";
             this.pointedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pointedToolStripMenuItem.Text = "Pointed";
@@ -169,16 +171,23 @@ namespace Lab1
             // moveToolStripMenuItem
             // 
             this.moveToolStripMenuItem.Name = "moveToolStripMenuItem";
-            this.moveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moveToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.moveToolStripMenuItem.Text = "Move";
             this.moveToolStripMenuItem.Click += new System.EventHandler(this.moveToolStripMenuItem_Click);
             // 
             // rotateToolStripMenuItem
             // 
             this.rotateToolStripMenuItem.Name = "rotateToolStripMenuItem";
-            this.rotateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rotateToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.rotateToolStripMenuItem.Text = "Rotate";
             this.rotateToolStripMenuItem.Click += new System.EventHandler(this.rotateToolStripMenuItem_Click);
+            // 
+            // waveFilterToolStripMenuItem
+            // 
+            this.waveFilterToolStripMenuItem.Name = "waveFilterToolStripMenuItem";
+            this.waveFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.waveFilterToolStripMenuItem.Text = "Wave Filter";
+            this.waveFilterToolStripMenuItem.Click += new System.EventHandler(this.waveFilterToolStripMenuItem_Click);
             // 
             // matrixToolStripMenuItem
             // 
@@ -260,6 +269,13 @@ namespace Lab1
             this.onYToolStripMenuItem1.Text = "on_Y";
             this.onYToolStripMenuItem1.Click += new System.EventHandler(this.onYToolStripMenuItem1_Click);
             // 
+            // medianFilterToolStripMenuItem
+            // 
+            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
+            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.medianFilterToolStripMenuItem.Text = "Median Filter";
+            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(9, 37);
@@ -297,19 +313,12 @@ namespace Lab1
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
-            // waveFilterToolStripMenuItem
+            // diagonalInversionToolStripMenuItem
             // 
-            this.waveFilterToolStripMenuItem.Name = "waveFilterToolStripMenuItem";
-            this.waveFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.waveFilterToolStripMenuItem.Text = "Wave Filter";
-            this.waveFilterToolStripMenuItem.Click += new System.EventHandler(this.waveFilterToolStripMenuItem_Click);
-            // 
-            // medianFilterToolStripMenuItem
-            // 
-            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
-            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.medianFilterToolStripMenuItem.Text = "Median Filter";
-            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
+            this.diagonalInversionToolStripMenuItem.Name = "diagonalInversionToolStripMenuItem";
+            this.diagonalInversionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.diagonalInversionToolStripMenuItem.Text = "DiagonalInversion";
+            this.diagonalInversionToolStripMenuItem.Click += new System.EventHandler(this.diagonalInversionToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -364,6 +373,7 @@ namespace Lab1
         private System.Windows.Forms.ToolStripMenuItem rotateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem waveFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medianFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem diagonalInversionToolStripMenuItem;
     }
 }
 
